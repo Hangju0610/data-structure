@@ -83,6 +83,7 @@ class LinkedList {
     this.size++;
   }
 
+  // 특정 위치에 있는 노드 제거하기
   deleteAt(index) {
     // 만약 index 값이 size보다 크다면
     if (index > this.size)
@@ -108,6 +109,8 @@ class LinkedList {
   printNode() {
     return this.size;
   }
+
+  // 인덱스를 통한 찾기
   find(index) {
     if (this.size === 0) return null;
     if (index > this.size) return null;
@@ -115,7 +118,7 @@ class LinkedList {
     for (let i = 0; i < index; i++) {
       current = current.next;
     }
-    return current;
+    return current.data;
   }
 
   // 특정 데이터를 가지고 있는 Node의 인덱스를 찾기
@@ -145,5 +148,6 @@ a.pushEnd(3);
 a.insertAt(4, 2);
 console.log(a.printNode());
 console.log(a.findIndex(4));
-a.pop();
+console.log(a.find(2));
+a.deleteAt(2);
 console.log(a.find(2));
