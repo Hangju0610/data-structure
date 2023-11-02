@@ -7,12 +7,16 @@ class Node {
 }
 class LinkedList {
   constructor() {
+    // 처음 만들었을 경우, head는 null을 넣어야 한다.
     this.head = null;
+    // linkedList의 크기를 보기 위해 넣었다.
     this.size = 0;
   }
   // head에 데이터 입력
   pushFirst(data) {
+    // 새로운 노드 하나 생성
     let newNode = new Node(data);
+    // 새로운 노드의 next를 현재 head로 설정 후, head를 newNode로 설정한다.
     newNode.next = this.head;
     this.head = newNode;
     this.size++;
@@ -20,6 +24,7 @@ class LinkedList {
 
   // head에 있는 데이터 삭제
   deleteFirst() {
+    // 다음 node로 head를 지정한다.
     this.head = this.head.next;
     this.size--;
   }
@@ -35,12 +40,14 @@ class LinkedList {
     }
     // 마지막을 찾기 위해 반복문 지정
     let tail = this.head;
+    // tail.next가 null일 경우, next로 새로운 노드를 삽입
     while (tail.next !== null) {
       tail = tail.next;
     }
     tail.next = newNode;
     this.size++;
   }
+  // 마지막 데이터 삭제
   deleteEnd() {
     if (this.size === 1) {
       this.head = null;
