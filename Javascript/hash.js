@@ -7,7 +7,9 @@ class MyHashTable {
   // load factor 설정을 위해 아이템의 개수를 측정할 수 있는 변수 생성
 
   resize() {
+    // 새로운 배열 생성
     const newTable = new Array(this.table.length * 2);
+    // 기존 테이블을 순회하기
     this.table.forEach((item) => {
       if (item) {
         item.forEach(([key, value]) => {
