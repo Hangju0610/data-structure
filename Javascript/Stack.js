@@ -1,9 +1,9 @@
 // Array를 통한 Stack 구현
 const stack = [];
 
-stack.push('dog');
-stack.push('cat');
-stack.push('horse');
+stack.push("dog");
+stack.push("cat");
+stack.push("horse");
 
 console.log(stack); // [ 'dog', 'cat', 'horse' ]
 const a = stack.pop();
@@ -39,12 +39,11 @@ class Stack {
 }
 
 const classStack = new Stack();
-classStack.push('hi');
-classStack.push('hello');
-classStack.push('안녕');
+classStack.push("hi");
+classStack.push("hello");
+classStack.push("안녕");
 
 const b = classStack.pop();
 console.log(b); // '안녕'
 const c = classStack.peek();
 console.log(c); // 'hello'
-
