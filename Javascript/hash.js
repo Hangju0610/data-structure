@@ -28,6 +28,7 @@ class MyHashTable {
   setItem(key, value) {
     this.numItems++;
 
+    // 만약 loadFactor 값이 넘었다면 리사이징 진행
     const loadFactor = this.numItems / this.table.length;
     if (loadFactor >= 0.7) {
       this.resize();
