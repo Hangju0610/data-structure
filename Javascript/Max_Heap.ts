@@ -68,7 +68,7 @@ class MaxHeap {
       }
       // 오른쪽 자식 노드가 부모 노드보다 클 경우
       if (
-        rightChildIndex > length &&
+        rightChildIndex < length &&
         this.heap[rightChildIndex] > this.heap[smallest]
       ) {
         smallest = rightChildIndex;
@@ -92,4 +92,4 @@ makeHeap.push(9);
 makeHeap.push(13);
 makeHeap.push(8);
 makeHeap.push(5);
-console.log(makeHeap.show);
+console.log(makeHeap.show());
