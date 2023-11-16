@@ -16,6 +16,7 @@ export class Queue {
       return this.rear - this.front + 1;
     }
   }
+
   enQueue(value) {
     if (this.size() === null) {
       this.store["0"] = value;
