@@ -22,7 +22,9 @@ export class CBT<T> {
    * @returns {TreeNode<T> | null} 해당 값이 null일 경우 null 반환, 아니면 Tree 반환
    */
   private insertNode(elements: T[], index: number): TreeNode<T> | null {
+    // 부모 선언 및 초기화
     let parent: TreeNode<T> | null = null;
+    // index가 element보다 작을 경우에만 진행
     if (index < elements.length) {
       let value = elements[index];
       if (value === null || value === undefined) {
@@ -39,10 +41,18 @@ export class CBT<T> {
     return parent;
   }
 
+  /**
+   * 이진 트리를 반전하는 메서드
+   */
   invert(): void {
     this.invertNode(this.root);
   }
 
+  /**
+   * 재귀 함수를 통해 이진 트리를 반전한다.
+   * @param {TreeNode<T> | null} parent
+   * @returns {TreeNode<T> | null}
+   */
   private invertNode(parent: TreeNode<T> | null): TreeNode<T> | null {
     if (parent) {
       [parent.left, parent.right] = [
