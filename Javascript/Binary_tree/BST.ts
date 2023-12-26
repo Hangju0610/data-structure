@@ -79,4 +79,11 @@ export class BinarySearchTree {
       return this.searchNode(node.right, value);
     }
   }
+  getRoot(): TreeNode<number> | null {
+    return this.root ? this.root : null;
+  }
 }
+
+const BSTtest = new BinarySearchTree();
+[30, 25, 35, 20, 10, 5, 40, 50, 60, 28, 32].forEach((v) => BSTtest.insert(v));
+console.log(BSTtest.getRoot());
